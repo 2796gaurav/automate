@@ -1,3 +1,7 @@
+pandas
+pyaml
+scikit-learn
+scipy
 aiohttp==3.8.1
 aiohttp-retry==2.4.6
 aiosignal==1.2.0

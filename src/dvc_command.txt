@@ -1,0 +1,40 @@
+## to run pipelines in src folder
+### source > https://dvc.org/doc/start/data-pipelines
+
+> 1. prepare
+
+dvc stage add -n prepare \
+                -p prepare.seed -p prepare.split \
+                -d src/prepare.py -d data/data.xml \
+                -o data/prepared \
+                python src/prepare.py data/data.xml
+
+> 2. features
+
+dvc stage add -n featurize \
+                -p featurize.max_features -p featurize.ngrams \
+                -d src/featurization.py -d data/prepared \
+                -o data/features \
+                python src/featurization.py data/prepared data/features
+
+> 3. Train
+
+dvc stage add -n train \
+                -p train.seed -p train.n_est -p train.min_split \
+                -d src/train.py -d data/features \
+                -o src/models/model.pkl \
+                python src/train.py data/features src/models/model.pkl
+
+
+## getting metrics
+source > https://dvc.org/doc/start/metrics-parameters-plots
+
+1. collecting
+
+dvc run -n evaluate \
+          -d src/evaluate.py -d model.pkl -d data/features \
+          -M src/metrics/scores.json \
+          --plots-no-cache src/metrics/prc.json \
+          --plots-no-cache src/metrics/roc.json \
+          python src/evaluate.py src/models/model.pkl \
+                 data/features src/metrics/scores.json src/metrics/prc.json src/metrics/roc.json
