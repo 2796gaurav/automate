@@ -8,5 +8,9 @@ featurize:
 
 train:
   seed: 20170428
-  n_est: 100
+  n_est: 105
   min_split: 64
+
+environment:
+  data: sample
+# sample / all
