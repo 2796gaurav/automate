@@ -1,4 +1,7 @@
 prepare:
+  # can be sample / all
+  env: sample 
+  data_rows: 1000
   split: 0.20
   seed: 20170428
 
@@ -10,7 +13,3 @@ train:
   seed: 20170428
   n_est: 105
   min_split: 64
-
-environment:
-  data: sample
-# sample / all

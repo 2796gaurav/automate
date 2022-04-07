@@ -18,6 +18,10 @@ if len(sys.argv) != 2:
 split = params["split"]
 random.seed(params["seed"])
 
+env = params['env']
+data_rows = params['data_rows']
+
+
 input = sys.argv[1]
 output_train = os.path.join("data", "prepared", "train.tsv")
 output_test = os.path.join("data", "prepared", "test.tsv")
@@ -39,8 +43,14 @@ def process_posts(fd_in, fd_out_train, fd_out_test, target_tag):
             fd_out.write("{}\t{}\t{}\n".format(pid, label, text))
 
             num += 1
+
+            if env == "sample":
+                if num >= data_rows:
+                    break
+
         except Exception as ex:
             sys.stderr.write(f"Skipping the broken line {num}: {ex}\n")
+    print(num)
 
 
 os.makedirs(os.path.join("data", "prepared"), exist_ok=True)

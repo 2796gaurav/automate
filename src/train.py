@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 params = yaml.safe_load(open("params.yaml"))["train"]
 
+# no of file names it depended on
 if len(sys.argv) != 3:
     sys.stderr.write("Arguments error. Usage:\n")
     sys.stderr.write("\tpython train.py features model\n")

@@ -5,48 +5,48 @@ stages:
     deps:
     - path: data/data.xml
       md5: a304afb96060aad90176268345e10355
-      size: 37916850
+      size: 37891850
     - path: src/prepare.py
-      md5: 51549a1c87b182ebdd785704f56ffaf1
-      size: 1632
+      md5: 78d06d084d26aa161a100a8fded27346
+      size: 1747
     params:
       params.yaml:
         prepare.seed: 20170428
         prepare.split: 0.2
     outs:
     - path: data/prepared
-      md5: 20b786b6e6f80e2b3fcf17827ad18597.dir
-      size: 23886319
+      md5: 8a7ba0ae02e959021c618a01ef775708.dir
+      size: 933989
       nfiles: 2
   featurize:
     cmd: python src/featurization.py data/prepared data/features
     deps:
     - path: data/prepared
-      md5: 20b786b6e6f80e2b3fcf17827ad18597.dir
-      size: 23886319
+      md5: 8a7ba0ae02e959021c618a01ef775708.dir
+      size: 933989
       nfiles: 2
     - path: src/featurization.py
       md5: 61c592707fd1b33e27819c87cf93f80a
-      size: 2470
+      size: 2391
     params:
       params.yaml:
         featurize.max_features: 3000
         featurize.ngrams: 2
     outs:
     - path: data/features
-      md5: c34e82f75c3e24d786081fd9f843e3cd.dir
-      size: 12730224
+      md5: 5698fb7ed0eedaa0daaef70d0fbc0a2f.dir
+      size: 493265
       nfiles: 2
   train:
     cmd: python src/train.py data/features src/models/model.pkl
     deps:
     - path: data/features
-      md5: c34e82f75c3e24d786081fd9f843e3cd.dir
-      size: 12730224
+      md5: 5698fb7ed0eedaa0daaef70d0fbc0a2f.dir
+      size: 493265
       nfiles: 2
     - path: src/train.py
-      md5: 9ab95496b29b6ea3418bbf20b9fe3473
-      size: 1003
+      md5: 12e51466be5332cf4781380525bb3b5a
+      size: 998
     params:
       params.yaml:
         train.min_split: 64
@@ -54,29 +54,29 @@ stages:
         train.seed: 20170428
     outs:
     - path: src/models/model.pkl
-      md5: ef356ac39872ef5347ade3a15448bf2d
-      size: 2337974
+      md5: c6b01b55d502763a6d9e8a2034a4d40c
+      size: 195354
   evaluate:
     cmd: python src/evaluate.py src/models/model.pkl data/features src/metrics/scores.json
       src/metrics/prc.json src/metrics/roc.json
     deps:
     - path: data/features
-      md5: c34e82f75c3e24d786081fd9f843e3cd.dir
-      size: 12730224
+      md5: 5698fb7ed0eedaa0daaef70d0fbc0a2f.dir
+      size: 493265
       nfiles: 2
     - path: src/evaluate.py
       md5: fb7b5209c9237ea6cf63550e5fe9b817
-      size: 2011
+      size: 1943
     - path: src/models/model.pkl
-      md5: ef356ac39872ef5347ade3a15448bf2d
-      size: 2337974
+      md5: c6b01b55d502763a6d9e8a2034a4d40c
+      size: 195354
     outs:
     - path: src/metrics/prc.json
-      md5: f9a092a7aece7b4a30ecd6d1768b9fd6
-      size: 141392
+      md5: 3006d2172bc8c0ac4a355639f3d22f4a
+      size: 7174
     - path: src/metrics/roc.json
-      md5: 39fa9c93b76b1779d1c5e833b40a60b7
-      size: 52895
+      md5: a3c195065f04ad364b744499c376e5c5
+      size: 2435
     - path: src/metrics/scores.json
-      md5: a6e86b71c5d096daefbbd2ac0418b1ae
-      size: 76
+      md5: 27e01d90b7cf89ab88557509c270f96a
+      size: 73
