@@ -1,9 +1,19 @@
-# automate
-# hello
+## Hey, I'm Ryan! 👋
 
-# Create and activate the build environment
-conda env create -f environment.yml
-conda activate code-dev
+Currently a student in Singapore, passionate about creating all-things-tech to improve society.
 
-# or with older versions of Anaconda:
-source activate code-dev
+---
+
+| [2796gaurav/automate](https://github.com/2796gaurav/automate) | [2796gaurav/automate_sagemaker](https://github.com/2796gaurav/automate_sagemaker) | [iterative/example_cml](https://github.com/iterative/example_cml) |
+| :-: | :-: | :-: |
+| <a href="https://github.com/2796gaurav/automate"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="2796gaurav/automate" title="2796gaurav/automate" width="200" height="200"></a> | <a href="https://github.com/2796gaurav/automate_sagemaker"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="2796gaurav/automate_sagemaker" title="2796gaurav/automate_sagemaker" width="200" height="200"></a> | <a href="https://github.com/iterative/example_cml"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="iterative/example_cml" title="iterative/example_cml" width="200" height="200"></a> |
+
+| [2796gaurav/example_cml](https://github.com/2796gaurav/example_cml) | [2796gaurav/ml_data_pipeline](https://github.com/2796gaurav/ml_data_pipeline) | [2796gaurav/ml_aws_data_pipeline](https://github.com/2796gaurav/ml_aws_data_pipeline) |
+| :-: | :-: | :-: |
+| <a href="https://github.com/2796gaurav/example_cml"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="2796gaurav/example_cml" title="2796gaurav/example_cml" width="200" height="200"></a> | <a href="https://github.com/2796gaurav/ml_data_pipeline"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="2796gaurav/ml_data_pipeline" title="2796gaurav/ml_data_pipeline" width="200" height="200"></a> | <a href="https://github.com/2796gaurav/ml_aws_data_pipeline"><img src="https://github.com/2796gaurav/automate/raw/main/DISPLAY.jpg" alt="2796gaurav/ml_aws_data_pipeline" title="2796gaurav/ml_aws_data_pipeline" width="200" height="200"></a> |
+
+
+
+---
+
+**Learn more about me at [ryanthe.com](https://www.ryanthe.com)!**
