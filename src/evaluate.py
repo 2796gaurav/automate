@@ -16,6 +16,7 @@ matrix_file = os.path.join(sys.argv[2], "test.pkl")
 scores_file = sys.argv[3]
 prc_file = sys.argv[4]
 roc_file = sys.argv[5]
+# loss_file = sys.argv[6]
 
 with open(model_file, "rb") as fd:
     model = pickle.load(fd)
@@ -28,6 +29,10 @@ x = matrix[:, 2:]
 
 predictions_by_class = model.predict_proba(x)
 predictions = predictions_by_class[:, 1]
+
+# Get the loss
+# loss = model.loss_curve_
+# pd.DataFrame(loss, columns=["loss"]).to_csv(loss_file, index=False)
 
 precision, recall, prc_thresholds = metrics.precision_recall_curve(labels, predictions)
 fpr, tpr, roc_thresholds = metrics.roc_curve(labels, predictions)
