@@ -34,8 +34,7 @@ stages:
     - src/models/model.pkl
     
   evaluate:
-    cmd: python src/evaluate.py src/models/model.pkl data/features src/metrics/scores.json
-      src/metrics/prc.json src/metrics/roc.json
+    cmd: python src/evaluate.py src/models/model.pkl data/features src/metrics/scores.json src/metrics/prc.json src/metrics/roc.json
     deps:
     - data/features
     - src/models/model.pkl
