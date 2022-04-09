@@ -16,14 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Update GitHub Profile README
-      uses: theboi/github-update-readme@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        header: "header name"
-        subhead: "subhead name."
-        footer: "**subfooter**"
-        #ref: "main"
-#         excludeActivity: '["WatchEvent"]'
-#         excludeRepo: '["theboi/theboi"]'
+      - uses: actions/checkout@v2
+      - uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
