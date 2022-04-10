@@ -44,6 +44,9 @@ def save_matrix(df, matrix, output):
 
     result = sparse.hstack([id_matrix, label_matrix, matrix], format="csr")
 
+    print(result)
+
+
     msg = "The output matrix {} size is {} and data type is {}\n"
     sys.stderr.write(msg.format(output, result.shape, result.dtype))
 
@@ -72,8 +75,11 @@ save_matrix(df_train, train_words_tfidf_matrix, train_output)
 
 # Generate test feature matrix
 df_test = get_df(test_input)
+df_test = df_test.head(2).tail(1)
 test_words = np.array(df_test.text.str.lower().values.astype("U"))
 test_words_binary_matrix = bag_of_words.transform(test_words)
 test_words_tfidf_matrix = tfidf.transform(test_words_binary_matrix)
+
+print(test_input)
 
 save_matrix(df_test, test_words_tfidf_matrix, test_output)
