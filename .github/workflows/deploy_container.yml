@@ -17,6 +17,13 @@ jobs:
    
     steps:
 
+      - name: ChatOps For Pull Requests
+        uses: machine-learning-apps/actions-chatops@1.41
+        with:
+          TRIGGER_PHRASE: "/dockerize"
+        env: # you must supply GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Check out code
       uses: actions/checkout@v2
     
