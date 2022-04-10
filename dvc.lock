@@ -26,8 +26,8 @@ stages:
       size: 933989
       nfiles: 2
     - path: src/featurization.py
-      md5: 61c592707fd1b33e27819c87cf93f80a
-      size: 2391
+      md5: 19fe51d3bfea882a15b2859c17912f37
+      size: 2392
     params:
       params.yaml:
         featurize.max_features: 2000
