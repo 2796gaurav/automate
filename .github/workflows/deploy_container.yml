@@ -17,6 +17,13 @@ jobs:
    
     steps:
 
+      - name: ChatOps For Pull Requests
+        uses: machine-learning-apps/actions-chatops@1.41
+        with:
+          TRIGGER_PHRASE: "/dockerize"
+        env: # you must supply GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Check out code
       uses: actions/checkout@v2
     
@@ -36,7 +43,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: docker_test
-        IMAGE_TAG: flask_test
+        IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
