@@ -44,6 +44,7 @@ def save_matrix(df, matrix, output):
 
     result = sparse.hstack([id_matrix, label_matrix, matrix], format="csr")
 
+
     msg = "The output matrix {} size is {} and data type is {}\n"
     sys.stderr.write(msg.format(output, result.shape, result.dtype))
 
