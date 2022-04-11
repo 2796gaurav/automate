@@ -53,29 +53,29 @@ jobs:
           cd terraform/ecr_repo && terraform apply -auto-approve
           #terraform plan -input=false -no-color     
 
-      - name: Post Plan to GitHub PR
-        uses: mshick/add-pr-comment@v1
-        with:
-          allow-repeats: true
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          message: |
-            ## ${{ matrix.path }} plan
-            ```
-            hello
-            ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
-            ``` 
+      # - name: Post Plan to GitHub PR
+      #   uses: mshick/add-pr-comment@v1
+      #   with:
+      #     allow-repeats: true
+      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+      #     repo-token-user-login: 'github-actions[bot]'
+      #     message: |
+      #       ## ${{ matrix.path }} plan
+      #       ```
+      #       hello
+      #       ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
+      #       ``` 
 
-      # - name: Login to Amazon ECR
-      #   id: login-ecr
-      #   uses: aws-actions/amazon-ecr-login@v1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
 
-      # - name: Build, tag, and push image to Amazon ECR
-      #   env:
-      #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-      #     ECR_REPOSITORY: gaurav_doc
-      #     IMAGE_TAG: latest
-      #   run: |
-      #     echo $ECR_REGISTRY
-      #     docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-      #     docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: deploy_test
+          IMAGE_TAG: latest
+        run: |
+          echo $ECR_REGISTRY
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
