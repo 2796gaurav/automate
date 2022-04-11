@@ -44,7 +44,14 @@ jobs:
           continue-on-error: true
           run: |
             cd terraform/ecr_repo && terraform plan
-            #terraform plan -input=false -no-color          
+            #terraform plan -input=false -no-color       
+            
+        - name: Apply Terraform
+          id: plan
+          continue-on-error: true
+          run: |
+            cd terraform/ecr_repo && terraform apply -auto-approve
+            #terraform plan -input=false -no-color     
 
         - name: Post Plan to GitHub PR
           uses: mshick/add-pr-comment@v1
@@ -55,6 +62,7 @@ jobs:
             message: |
               ## ${{ matrix.path }} plan
               ```
+              hello
               ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
               ``` 
 
