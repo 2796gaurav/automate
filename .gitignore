@@ -1,2 +1,7 @@
 /model.pkl
 /models
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
