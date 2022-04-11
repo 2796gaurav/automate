@@ -2,17 +2,16 @@ name: Docker Image CI
 
 on:
   [issue_comment]
-    types: [created, edited, deleted]
 #   # Triggers the workflow on push or pull request events but only for the main branch
 #   push:
 #     branches: [ main ]
 #   pull_request:
 #     branches: [ main ]
 jobs:
-  if: contains(github.event.comment.html_url, '/dockerize')
   build:
     name: Build Image
     runs-on: ubuntu-latest
+    if: contains(github.event.comment.html_url, '/dockerize')
 
    
     steps:
