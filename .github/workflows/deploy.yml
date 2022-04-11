@@ -1,0 +1,54 @@
+name: deploy to aws
+
+on:
+  [issue_comment]
+#   # Triggers the workflow on push or pull request events but only for the main branch
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+jobs:
+  
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+
+   
+    steps:
+
+      - name: ChatOps For Pull Requests
+        uses: machine-learning-apps/actions-chatops@1.41
+        with:
+          TRIGGER_PHRASE: "/deploy"
+        env: # you must supply GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check out code
+        uses: actions/checkout@v2
+    
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }} 
+          
+          #ap-south-1
+      - name: Initialize Terraform
+        run: |
+            cd terraform/ecs_deploy && terraform init
+            #terraform init -input=false         
+
+      - name: Plan Terraform
+        id: plan
+        continue-on-error: true
+        run: |
+          cd terraform/ecs_deploy && terraform plan
+          #terraform plan -input=false -no-color       
+          
+      - name: Apply Terraform
+        id: apply
+        continue-on-error: true
+        run: |
+          cd terraform/ecs_deploy && terraform apply -auto-approve
+          #terraform plan -input=false -no-color
