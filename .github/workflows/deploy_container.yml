@@ -44,5 +44,6 @@ jobs:
           ECR_REPOSITORY: gaurav_doc
           IMAGE_TAG: latest
         run: |
+          echo "$ECR_REGISTRY"
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
