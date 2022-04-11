@@ -39,24 +39,32 @@ jobs:
             cd terraform/ecr_repo && terraform init
             #terraform init -input=false         
 
-      - name: Plan Terraform
-        id: plan
-        continue-on-error: true
-        run: |
-          cd terraform/ecr_repo && terraform plan
-          #terraform plan -input=false -no-color          
+        - name: Plan Terraform
+          id: plan
+          continue-on-error: true
+          run: |
+            cd terraform/ecr_repo && terraform plan
+            #terraform plan -input=false -no-color       
+            
+        - name: Apply Terraform
+          id: plan
+          continue-on-error: true
+          run: |
+            cd terraform/ecr_repo && terraform apply -auto-approve
+            #terraform plan -input=false -no-color     
 
-      - name: Post Plan to GitHub PR
-        uses: mshick/add-pr-comment@v1
-        with:
-          allow-repeats: true
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          message: |
-            ## ${{ matrix.path }} plan
-            ```
-            ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
-            ``` 
+        - name: Post Plan to GitHub PR
+          uses: mshick/add-pr-comment@v1
+          with:
+            allow-repeats: true
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            repo-token-user-login: 'github-actions[bot]'
+            message: |
+              ## ${{ matrix.path }} plan
+              ```
+              hello
+              ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
+              ``` 
 
       # - name: Login to Amazon ECR
       #   id: login-ecr
