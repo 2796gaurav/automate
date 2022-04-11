@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image destroy
 
 on:
   [issue_comment]
@@ -31,24 +31,29 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }} 
+          aws-region: ${{ secrets.AWS_REGION }}       
           
-          #ap-south-1
-      - name: Initialize Terraform
-        run: |
-            cd terraform/ecr_repo && terraform init
-            #terraform init -input=false         
 
-      - name: Plan Terraform
-        id: plan
-        continue-on-error: true
-        run: |
-          cd terraform/ecr_repo && terraform plan
-          #terraform plan -input=false -no-color       
-          
-      - name: destroy Terraform
-        id: destroy
-        continue-on-error: true
-        run: |
-          cd terraform/ecr_repo && terraform destroy -auto-approve
-          #terraform plan -input=false -no-color
+        - name: AWS Plan Copy
+          run: aws s3 cp s3://gauravyolo/container-log-${{ github.event.inputs.env }}.tfstate terraform.tfstate
+          id: copy
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+
+        - name: Show Destroy plan
+          run: cd terraform/ecr_repo && terraform plan -destroy
+          continue-on-error: true
+
+        - name: Destroy resources jobs
+          id: destroy
+          run: cd terraform/ecr_repo && terraform destroy -auto-approve
+
+        - name: Delete plan file
+          if: steps.destroy.outcome == 'success'
+          run: aws s3 rm s3://gauravyolo/container-log-${{ github.event.inputs.env }}.tfstate
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
