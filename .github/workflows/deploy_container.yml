@@ -35,7 +35,7 @@ jobs:
           
           #ap-south-1
       - name: Initialize Terraform
-          run: |
+        run: |
             cd terraform/ecr_repo && terraform init
             #terraform init -input=false         
 
