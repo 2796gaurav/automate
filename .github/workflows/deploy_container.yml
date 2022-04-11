@@ -35,23 +35,23 @@ jobs:
           
           #ap-south-1
       - name: Initialize Terraform
-          run: |
-            cd terraform/ecr_repo && terraform init
-            #terraform init -input=false         
+        run: |
+          cd terraform/ecr_repo && terraform init
+          #terraform init -input=false         
 
-        - name: Plan Terraform
-          id: plan
-          continue-on-error: true
-          run: |
-            cd terraform/ecr_repo && terraform plan
-            #terraform plan -input=false -no-color       
-            
-        - name: Apply Terraform
-          id: plan
-          continue-on-error: true
-          run: |
-            cd terraform/ecr_repo && terraform apply
-            #terraform plan -input=false -no-color     
+      - name: Plan Terraform
+        id: plan
+        continue-on-error: true
+        run: |
+          cd terraform/ecr_repo && terraform plan
+          #terraform plan -input=false -no-color       
+
+      - name: Apply Terraform
+        id: apply
+        continue-on-error: true
+        run: |
+          cd terraform/ecr_repo && terraform apply
+          #terraform plan -input=false -no-color     
 
         # - name: Post Plan to GitHub PR
         #   uses: mshick/add-pr-comment@v1
