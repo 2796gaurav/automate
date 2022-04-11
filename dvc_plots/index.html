@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>DVC Plot</title>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+    
+</head>
+<body>
+    
+    <div id = "plot_src_metrics_prc_json">
+        <script type = "text/javascript">
+            var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.07352941176470588,
+        "recall": 1.0,
+        "rev": "workspace",
+        "step": 0,
+        "threshold": 0.021905781119189362
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05970149253731343,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 1,
+        "threshold": 0.022299552299552296
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06060606060606061,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 2,
+        "threshold": 0.02237500947024756
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06153846153846154,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 3,
+        "threshold": 0.023351519732472115
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0625,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 4,
+        "threshold": 0.023384285074260523
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06349206349206349,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 5,
+        "threshold": 0.023512741193395643
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06451612903225806,
+        "recall": 0.8,
+        "rev": "workspace",
+        "step": 6,
+        "threshold": 0.02392135642135642
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.04918032786885246,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 7,
+        "threshold": 0.024340677996140182
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 8,
+        "threshold": 0.02577777777777778
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05084745762711865,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 9,
+        "threshold": 0.026349206349206348
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05172413793103448,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 10,
+        "threshold": 0.026591630591630593
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05263157894736842,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 11,
+        "threshold": 0.02703266101762342
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05357142857142857,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 12,
+        "threshold": 0.02796528076538447
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05454545454545454,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 13,
+        "threshold": 0.02869578393387917
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05555555555555555,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 14,
+        "threshold": 0.02875283446712018
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.05660377358490566,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 15,
+        "threshold": 0.028955471077319817
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.057692307692307696,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 16,
+        "threshold": 0.03057762923878083
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.058823529411764705,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 17,
+        "threshold": 0.031474240045668615
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 18,
+        "threshold": 0.0317077367077367
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.061224489795918366,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 19,
+        "threshold": 0.0328634857010832
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0625,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 20,
+        "threshold": 0.033664407112682974
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06382978723404255,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 21,
+        "threshold": 0.03419173160962981
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06521739130434782,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 22,
+        "threshold": 0.03466080268794458
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06666666666666667,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 23,
+        "threshold": 0.03627223047584295
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06818181818181818,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 24,
+        "threshold": 0.036897546897546894
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.06976744186046512,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 25,
+        "threshold": 0.03764815327840538
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.07142857142857142,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 26,
+        "threshold": 0.03992999064427635
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.07317073170731707,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 27,
+        "threshold": 0.04030334535973634
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.075,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 28,
+        "threshold": 0.04083460667230418
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.07692307692307693,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 29,
+        "threshold": 0.041333958870904686
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.07894736842105263,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 30,
+        "threshold": 0.04144530964427637
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.08108108108108109,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 31,
+        "threshold": 0.04168604467213566
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.08333333333333333,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 32,
+        "threshold": 0.04169709570010674
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.08571428571428572,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 33,
+        "threshold": 0.04249575865415816
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.08823529411764706,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 34,
+        "threshold": 0.04320802005012531
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.09090909090909091,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 35,
+        "threshold": 0.04328845489300976
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.09375,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 36,
+        "threshold": 0.04422525284214899
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0967741935483871,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 37,
+        "threshold": 0.04449184599401073
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.1,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 38,
+        "threshold": 0.04646642872067129
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.10344827586206896,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 39,
+        "threshold": 0.047558295363173415
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.10714285714285714,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 40,
+        "threshold": 0.04938775510204081
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.1111111111111111,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 41,
+        "threshold": 0.049523809523809526
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.11538461538461539,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 42,
+        "threshold": 0.05085190914063446
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.12,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 43,
+        "threshold": 0.05220874667998457
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.125,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 44,
+        "threshold": 0.053783081609622065
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.13043478260869565,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 45,
+        "threshold": 0.05532513782204332
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.13636363636363635,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 46,
+        "threshold": 0.055714582129147955
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.14285714285714285,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 47,
+        "threshold": 0.05678608402227795
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.15,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 48,
+        "threshold": 0.05707570207570207
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.15789473684210525,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 49,
+        "threshold": 0.058688681918495585
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.16666666666666666,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 50,
+        "threshold": 0.059894571155649494
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.17647058823529413,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 51,
+        "threshold": 0.061038707290790306
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.1875,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 52,
+        "threshold": 0.061372765374391104
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.2,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 53,
+        "threshold": 0.06411252328812457
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.21428571428571427,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 54,
+        "threshold": 0.06484243354037006
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.23076923076923078,
+        "recall": 0.6,
+        "rev": "workspace",
+        "step": 55,
+        "threshold": 0.06609822716965573
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.16666666666666666,
+        "recall": 0.4,
+        "rev": "workspace",
+        "step": 56,
+        "threshold": 0.0706000895656068
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.09090909090909091,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 57,
+        "threshold": 0.07113651392556058
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.1,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 58,
+        "threshold": 0.0721398357322727
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.1111111111111111,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 59,
+        "threshold": 0.07461854028614348
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.125,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 60,
+        "threshold": 0.07466201300787767
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.14285714285714285,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 61,
+        "threshold": 0.07542416228431618
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.16666666666666666,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 62,
+        "threshold": 0.07641332395026977
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.2,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 63,
+        "threshold": 0.07688508313716616
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.25,
+        "recall": 0.2,
+        "rev": "workspace",
+        "step": 64,
+        "threshold": 0.08028016774012742
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0,
+        "recall": 0.0,
+        "rev": "workspace",
+        "step": 65,
+        "threshold": 0.08979632844763305
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0,
+        "recall": 0.0,
+        "rev": "workspace",
+        "step": 66,
+        "threshold": 0.09961313818456675
+    },
+    {
+        "filename": "src/metrics/prc.json",
+        "precision": 0.0,
+        "recall": 0.0,
+        "rev": "workspace",
+        "step": 67,
+        "threshold": 0.10574263038548753
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "field": "step",
+                    "type": "quantitative",
+                    "title": "step"
+                },
+                "y": {
+                    "field": "threshold",
+                    "type": "quantitative",
+                    "title": "threshold",
+                    "scale": {
+                        "zero": false
+                    }
+                },
+                "color": {
+                    "field": "rev",
+                    "type": "nominal"
+                }
+            },
+            "layer": [
+                {
+                    "mark": "line"
+                },
+                {
+                    "selection": {
+                        "label": {
+                            "type": "single",
+                            "nearest": true,
+                            "on": "mouseover",
+                            "encodings": [
+                                "x"
+                            ],
+                            "empty": "none",
+                            "clear": "mouseout"
+                        }
+                    },
+                    "mark": "point",
+                    "encoding": {
+                        "opacity": {
+                            "condition": {
+                                "selection": "label",
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "selection": "label"
+                    }
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "gray"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        }
+                    }
+                },
+                {
+                    "encoding": {
+                        "text": {
+                            "type": "quantitative",
+                            "field": "threshold"
+                        },
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "threshold",
+                            "type": "quantitative"
+                        }
+                    },
+                    "layer": [
+                        {
+                            "mark": {
+                                "type": "text",
+                                "align": "left",
+                                "dx": 5,
+                                "dy": -5
+                            },
+                            "encoding": {
+                                "color": {
+                                    "type": "nominal",
+                                    "field": "rev"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+;
+            vegaEmbed('#plot_src_metrics_prc_json', spec);
+        </script>
+    </div>
+    
+
+    <div id = "plot_src_metrics_roc_json">
+        <script type = "text/javascript">
+            var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.0,
+        "rev": "workspace",
+        "step": 0,
+        "threshold": 1.1057426303854876,
+        "tpr": 0.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.004545454545454545,
+        "rev": "workspace",
+        "step": 1,
+        "threshold": 0.10574263038548753,
+        "tpr": 0.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.013636363636363636,
+        "rev": "workspace",
+        "step": 2,
+        "threshold": 0.08979632844763305,
+        "tpr": 0.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.013636363636363636,
+        "rev": "workspace",
+        "step": 3,
+        "threshold": 0.08028016774012742,
+        "tpr": 0.2
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.045454545454545456,
+        "rev": "workspace",
+        "step": 4,
+        "threshold": 0.07113651392556058,
+        "tpr": 0.2
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.045454545454545456,
+        "rev": "workspace",
+        "step": 5,
+        "threshold": 0.06609822716965573,
+        "tpr": 0.6
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.2636363636363636,
+        "rev": "workspace",
+        "step": 6,
+        "threshold": 0.024340677996140182,
+        "tpr": 0.6
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.2636363636363636,
+        "rev": "workspace",
+        "step": 7,
+        "threshold": 0.02392135642135642,
+        "tpr": 0.8
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.2863636363636364,
+        "rev": "workspace",
+        "step": 8,
+        "threshold": 0.022299552299552296,
+        "tpr": 0.8
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.2863636363636364,
+        "rev": "workspace",
+        "step": 9,
+        "threshold": 0.021905781119189362,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.7863636363636364,
+        "rev": "workspace",
+        "step": 10,
+        "threshold": 0.0028191170367351187,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.7954545454545454,
+        "rev": "workspace",
+        "step": 11,
+        "threshold": 0.0027777777777777775,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9090909090909091,
+        "rev": "workspace",
+        "step": 12,
+        "threshold": 0.000895094880057286,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9181818181818182,
+        "rev": "workspace",
+        "step": 13,
+        "threshold": 0.0008163265306122449,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9454545454545454,
+        "rev": "workspace",
+        "step": 14,
+        "threshold": 0.0004329004329004329,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9545454545454546,
+        "rev": "workspace",
+        "step": 15,
+        "threshold": 0.0003896103896103896,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9590909090909091,
+        "rev": "workspace",
+        "step": 16,
+        "threshold": 0.0003599015363721246,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9681818181818181,
+        "rev": "workspace",
+        "step": 17,
+        "threshold": 0.0002228477597935726,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 0.9772727272727273,
+        "rev": "workspace",
+        "step": 18,
+        "threshold": 0.00017636684303350968,
+        "tpr": 1.0
+    },
+    {
+        "filename": "src/metrics/roc.json",
+        "fpr": 1.0,
+        "rev": "workspace",
+        "step": 19,
+        "threshold": 0.0,
+        "tpr": 1.0
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "field": "step",
+                    "type": "quantitative",
+                    "title": "step"
+                },
+                "y": {
+                    "field": "threshold",
+                    "type": "quantitative",
+                    "title": "threshold",
+                    "scale": {
+                        "zero": false
+                    }
+                },
+                "color": {
+                    "field": "rev",
+                    "type": "nominal"
+                }
+            },
+            "layer": [
+                {
+                    "mark": "line"
+                },
+                {
+                    "selection": {
+                        "label": {
+                            "type": "single",
+                            "nearest": true,
+                            "on": "mouseover",
+                            "encodings": [
+                                "x"
+                            ],
+                            "empty": "none",
+                            "clear": "mouseout"
+                        }
+                    },
+                    "mark": "point",
+                    "encoding": {
+                        "opacity": {
+                            "condition": {
+                                "selection": "label",
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "selection": "label"
+                    }
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "gray"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        }
+                    }
+                },
+                {
+                    "encoding": {
+                        "text": {
+                            "type": "quantitative",
+                            "field": "threshold"
+                        },
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "threshold",
+                            "type": "quantitative"
+                        }
+                    },
+                    "layer": [
+                        {
+                            "mark": {
+                                "type": "text",
+                                "align": "left",
+                                "dx": 5,
+                                "dy": -5
+                            },
+                            "encoding": {
+                                "color": {
+                                    "type": "nominal",
+                                    "field": "rev"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+;
+            vegaEmbed('#plot_src_metrics_roc_json', spec);
+        </script>
+    </div>
+    
+</body>
+</html>
